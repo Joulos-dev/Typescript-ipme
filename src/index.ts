@@ -1,3 +1,5 @@
-import "./first-type";
+// import "./first-type";
+//
+// import "./exo-jules";
 
-import "./exo-jules";
+import "./cour_class";
