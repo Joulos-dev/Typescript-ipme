@@ -1,32 +1,63 @@
 import {Roue} from "./roue";
 
 export class Voiture {
-    private _name: string;
-    private _kilometers: number = 0;
-    private _roues: Array<Roue> = [];
+    private _type: string;
+    private _modele: string;
+    private _marque: string;
+    private _mileage: number = 0;
+    private _passengers: Array<string> = [];
 
-    constructor(name:string, array: Array<Roue>) {
-        this._name = name;
-        this._roues = array;
-    }
-    get name(): string {
-        return this._name;
-    }
-
-    set name(value: string) {
-        this._name = value;
+    constructor(type:string, modele:string, marque:string, kms: number) {
+        this._type = type;
+        this._modele = modele;
+        this._marque = marque;
+        this._mileage = kms;
     }
 
-    get kilometers(): number {
-        return this._kilometers;
+    get type(): string {
+        return this._type;
     }
 
-    set kilometers(value: number) {
-        this._kilometers = value;
+    set type(value: string) {
+        this._type = value;
     }
 
-    get roues(): Array<Roue> {
-        return this._roues;
+    get modele(): string {
+        return this._modele;
     }
 
+    set modele(value: string) {
+        this._modele = value;
+    }
+
+    get marque(): string {
+        return this._marque;
+    }
+
+    set marque(value: string) {
+        this._marque = value;
+    }
+
+    get mileage(): number {
+        return this._mileage;
+    }
+
+    set mileage(value: number) {
+        this._mileage = value;
+    }
+
+    getGlobalStatus(){
+        console.log(" La voiture " + this._type + ", " + this._marque + " " + this._modele + " de " + this._mileage + " kms, à comme passagers : "  + this._passengers);
+    }
+
+    addPassenger(name:string){
+        this._passengers.push(name);
+        this.getGlobalStatus();
+    }
+
+    removePassenger(name:string){
+        const positionInTheList = this._passengers.indexOf(name);
+        this._passengers.splice(positionInTheList, 1);
+        this.getGlobalStatus();
+    }
 }
