@@ -2,4 +2,6 @@
 //
 // import "./exo-jules";
 
-import "./cour_class";
+// import "./cour_class";
+
+import "./class/heros/index_heros";
